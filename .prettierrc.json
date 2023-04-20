@@ -1,0 +1,23 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
+    "proseWrap": "always",
+    "vueIndentScriptAndStyle": false,
+    "wrapAttributes": false,
+    "sortAttributes": false,
+    "bracketSpacing": true,
+    "bracketSameLine": true,
+    "jsxBracketSameLine": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "arrowParens": "avoid",
+    "tabWidth": 4,
+    "useTabs": false,
+    "semi": false,
+    "printWidth": 500
+}
