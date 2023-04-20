@@ -7,6 +7,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import replace from '@rollup/plugin-replace'
 import postcss from 'rollup-plugin-postcss'
+import terser from '@rollup/plugin-terser'
 import alias from 'rollup-plugin-alias'
 import _dotenv from 'dotenv/config'
 import url from 'rollup-plugin-url'
@@ -58,9 +59,10 @@ export default {
         typescript(),
         postcss(),
         json(),
-        resolve(),
+        resolve({ browser: true }),
         commonjs(),
         emptyDir(),
+        terser({ module: true }),
         url({
             include: ['**/*.svg', '**/*.png', '**/*.jpg', '**/*.gif', '**/*.woff', '**/*.woff2'],
             limit: Infinity,
