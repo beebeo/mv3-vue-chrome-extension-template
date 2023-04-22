@@ -16,6 +16,7 @@ import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
+const isProduction = process.env.NODE_ENV !== 'development'
 
 export default {
     input: 'src/manifest.json',
@@ -62,7 +63,7 @@ export default {
         resolve({ browser: true }),
         commonjs(),
         emptyDir(),
-        terser({ module: true }),
+        isProduction && terser({ module: true }),
         url({
             include: ['**/*.svg', '**/*.png', '**/*.jpg', '**/*.gif', '**/*.woff', '**/*.woff2'],
             limit: Infinity,
